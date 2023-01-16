@@ -1,13 +1,10 @@
 package kata.jdbc.model;
 
-import org.hibernate.annotations.Table;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
-@Table(appliesTo = "users")
+@Entity
+@Table(name = "Users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,6 +21,17 @@ public class User {
 
     public User() {
 
+    }
+
+    @Override
+    public String toString() {
+        return
+                "User{" +
+                        "id=" + id +
+                        ", name='" + name + '\'' +
+                        ", lastName='" + lastName + '\'' +
+                        ", age=" + age +
+                        '}';
     }
 
     public User(String name, String lastName, Byte age) {
@@ -63,4 +71,5 @@ public class User {
     public void setAge(Byte age) {
         this.age = age;
     }
+
 }
