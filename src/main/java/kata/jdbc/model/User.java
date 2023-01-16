@@ -1,7 +1,13 @@
-package jm.task.core.jdbc.model;
+package kata.jdbc.model;
 
-import javax.persistence.*;
-@Table
+import org.hibernate.annotations.Table;
+
+import javax.persistence.Column;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Table(appliesTo = "users")
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

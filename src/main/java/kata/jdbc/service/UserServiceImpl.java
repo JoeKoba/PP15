@@ -1,7 +1,9 @@
-package jm.task.core.jdbc.service;
+package kata.jdbc.service;
 
-import jm.task.core.jdbc.dao.UserDaoJDBCImpl;
-import jm.task.core.jdbc.model.User;
+
+import kata.jdbc.dao.UserDaoJDBCImpl;
+import kata.jdbc.model.User;
+
 import java.util.List;
 
 public class UserServiceImpl implements UserService {

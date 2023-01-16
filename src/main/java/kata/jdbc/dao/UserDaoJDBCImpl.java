@@ -1,15 +1,17 @@
-package jm.task.core.jdbc.dao;
+package kata.jdbc.dao;
 
-import jm.task.core.jdbc.model.User;
-import jm.task.core.jdbc.util.Util;
+
+
+import kata.jdbc.model.User;
+import kata.jdbc.util.Util;
+
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class UserDaoJDBCImpl implements UserDao {
 
-    private final Connection connection = Util.getConnection();
-
+    Connection connection = Util.getConnection();
 
     public UserDaoJDBCImpl() {
 
@@ -50,7 +52,7 @@ public class UserDaoJDBCImpl implements UserDao {
 
     public void removeUserById(long id) {
         try (Statement statement = connection.createStatement()) {
-            String SQL = "delete from my_db.users where id";
+            String SQL = "delete from users where id";
             statement.executeUpdate(SQL);
         } catch (SQLException e) {
             throw new RuntimeException(e);

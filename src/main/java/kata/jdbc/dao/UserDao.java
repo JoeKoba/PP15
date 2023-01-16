@@ -1,9 +1,11 @@
-package jm.task.core.jdbc.service;
+package kata.jdbc.dao;
 
-import jm.task.core.jdbc.model.User;
+
+import kata.jdbc.model.User;
+
 import java.util.List;
 
-public interface UserService {
+public interface UserDao {
     void createUsersTable();
 
     void dropUsersTable();
