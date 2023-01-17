@@ -15,9 +15,21 @@ import java.util.Properties;
 
 public class Util {
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
-    private static final String HOST = "jdbc:mysql://localhost:3306/my_db";
+    private static final String URL = "jdbc:mysql://localhost:3306/my_db";
     private static final String LOGIN = "root";
     private static final String PASSWORD = "root";
+
+    public static Connection getConnection() {
+        Connection connection = null;
+        try {
+            Class.forName(DRIVER);
+            connection = DriverManager.getConnection(URL, LOGIN, PASSWORD);
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return connection;
+    }
+
 
     private static SessionFactory sessionFactory = null;
 
@@ -38,8 +50,6 @@ public class Util {
 
                 settings.put(Environment.CURRENT_SESSION_CONTEXT_CLASS, "thread");
 
-//                settings.put(Environment.HBM2DDL_AUTO, "create-drop");
-
                 configuration.setProperties(settings);
 
                 configuration.addAnnotatedClass(User.class);
@@ -54,29 +64,6 @@ public class Util {
         }
         return sessionFactory;
     }
-
-//    public static SessionFactory getConnection() {
-//
-//        try {
-//            Configuration configuration = new Configuration()
-//                    .setProperty("hibernate.connection.driver_class", DRIVER)
-//                    .setProperty("hibernate.connection.url", HOST)
-//                    .setProperty("hibernate.connection.username", LOGIN)
-//                    .setProperty("hibernate.connection.password", PASSWORD)
-//                    .setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect")
-//                    .addAnnotatedClass(User.class)
-//                    .setProperty("hibernate.c3p0.min_size","5")
-//                    .setProperty("hibernate.c3p0.max_size","200")
-//                    .setProperty("hibernate.c3p0.max_statements","200");
-//
-//            ServiceRegistry serviceRegistry = new StandardServiceRegistryBuilder()
-//                    .applySettings(configuration.getProperties()).build();
-//            sessionFactory = configuration.buildSessionFactory(serviceRegistry);
-//        } catch (HibernateException e) {
-//            e.printStackTrace();
-//        }
-//        return sessionFactory;
-//    }
 }
 
 
