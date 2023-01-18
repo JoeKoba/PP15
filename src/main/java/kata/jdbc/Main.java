@@ -7,6 +7,7 @@ import kata.jdbc.service.UserServiceImpl;
 
 public class Main {
     private static final UserService userService = new UserServiceImpl();
+
     private static final User user1 = new User("user1", "user1", (byte) 33);
     private static final User user2 = new User("user2", "user2", (byte) 33);
     private static final User user3 = new User("user3", "user3", (byte) 33);

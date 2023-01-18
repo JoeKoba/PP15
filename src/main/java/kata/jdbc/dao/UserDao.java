@@ -6,6 +6,7 @@ import kata.jdbc.model.User;
 import java.util.List;
 
 public interface UserDao {
+
     void createUsersTable();
 
     void dropUsersTable();
