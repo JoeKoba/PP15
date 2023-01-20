@@ -1,6 +1,7 @@
 package kata.jdbc;
 
 
+import kata.jdbc.dao.UserDao;
 import kata.jdbc.model.User;
 import kata.jdbc.service.UserService;
 import kata.jdbc.service.UserServiceHibernateImpl;

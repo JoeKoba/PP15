@@ -2,11 +2,11 @@ package kata.jdbc.service;
 
 
 import kata.jdbc.dao.UserDao;
-import kata.jdbc.dao.UserDaoHibernateImpl;
-import kata.jdbc.dao.UserDaoJDBCImpl;
 import kata.jdbc.model.User;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
+
 
 public interface UserService {
 

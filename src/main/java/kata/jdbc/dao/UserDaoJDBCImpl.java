@@ -4,11 +4,13 @@ package kata.jdbc.dao;
 
 import kata.jdbc.model.User;
 import kata.jdbc.util.Util;
+import org.springframework.stereotype.Repository;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Repository
 public class UserDaoJDBCImpl extends Util implements UserDao {
 
     Connection connection = Util.getConnection();
