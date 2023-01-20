@@ -5,7 +5,7 @@ import kata.jdbc.model.User;
 
 import java.util.List;
 
-public class UserServiceImpl implements UserService {
+public class UserServiceHibernateImpl implements UserService {
 
     UserDaoHibernateImpl userDaoHibernate = new UserDaoHibernateImpl();
 
