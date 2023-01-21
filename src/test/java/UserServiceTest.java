@@ -1,3 +1,4 @@
+import kata.jdbc.dao.UserHibernateDao;
 import kata.jdbc.model.User;
 import kata.jdbc.service.UserService;
 import kata.jdbc.service.UserServiceHibernateImpl;
@@ -7,7 +8,7 @@ import org.junit.Test;
 import java.util.List;
 
 public class UserServiceTest {
-    private final UserService userService = new UserServiceHibernateImpl();
+    private final UserService userService = new UserServiceHibernateImpl(new UserHibernateDao());
 
     private final String testName = "Ivan";
     private final String testLastName = "Ivanov";

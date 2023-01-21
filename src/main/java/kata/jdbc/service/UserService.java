@@ -1,9 +1,7 @@
 package kata.jdbc.service;
 
 
-import kata.jdbc.dao.UserDao;
 import kata.jdbc.model.User;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

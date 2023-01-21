@@ -1,13 +1,13 @@
 package kata.jdbc;
 
 
-import kata.jdbc.dao.UserDao;
+import kata.jdbc.dao.UserHibernateDao;
 import kata.jdbc.model.User;
 import kata.jdbc.service.UserService;
 import kata.jdbc.service.UserServiceHibernateImpl;
 
 public class Main {
-    private static final UserService userService = new UserServiceHibernateImpl();
+    private static final UserService userService = new UserServiceHibernateImpl(new UserHibernateDao());
 
     private static final User user1 = new User("user1", "user1", (byte) 33);
     private static final User user2 = new User("user2", "user2", (byte) 33);
